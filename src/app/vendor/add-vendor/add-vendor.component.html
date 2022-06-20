@@ -1,0 +1,49 @@
+<form #addVendor="ngForm" (submit) ="insertVendor(addVendor)" >
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtName">Name</label>
+            <input id="txtName" [(ngModel)]="vendor.name" name="name" class="form-control"/>
+        </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtCity">City</label>
+                <input id="txtCity" [(ngModel)]="vendor.city" name="city" class="form-control"/>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="txtCountry">Country</label>
+                <input id="txtCountry" [(ngModel)]="vendor.country" name="country" class="form-control"/>
+            </div>
+        </div>
+    </div>
+   <div class="row">
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtMobile">Mobile</label>
+            <input id="txtMobile" [(ngModel)]="vendor.mobile" name="mobile" class="form-control"/>
+        </div>
+    </div>
+    
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="txtEmailId">EmailId</label>
+            <input id="txtEmailId" [(ngModel)]="vendor.emailId" name="emailId" class="form-control"/>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="isActive">IsActive</label>
+            <select id="isActive" [(ngModel)]="vendor.isActive" name="isActive" class="form-control">
+                <option value=true>True</option>
+                <option value=false>False</option>
+            </select>
+        </div>
+    </div>
+   </div>
+
+    <input type="submit" value="Add Vendor" class="btn btn-primary"/>
+    <input type="button" value="Cancel" class="btn btn-default" (click)="resetPage(addVendor)"/>
+</form>
