@@ -11,14 +11,16 @@ export class AddEmployeeComponent implements OnInit {
   employee:Employee ={
     firstName: '',
     lastName:'',
+    fullName:'',
     city:'',
     title:'',
     hireDate:new Date(),
     birthDate:new Date(),
     region:0,
     reportsTo:0,
-    titleOfCourtesy:''
-  
+    titleOfCourtesy:'',
+    regionName:'',
+    id:0
   }
   constructor() { }
 

@@ -5,7 +5,9 @@ import { RegionRoutingModule } from './region-routing.module';
 import { RegionComponent } from './region.component';
 import { ListRegionComponent } from './list-region/list-region.component';
 import { AddRegionComponent } from './add-region/add-region.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegionService } from 'src/services/region.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +19,12 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RegionRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
+  ],
+  providers:[
+    RegionService
   ]
 })
 export class RegionModule { }

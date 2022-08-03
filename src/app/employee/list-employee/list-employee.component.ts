@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Employee } from 'src/interface/employee';
+import { EmployeeService } from 'src/services/employee.service';
 
 @Component({
   selector: 'app-list-employee',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListEmployeeComponent implements OnInit {
 
-  constructor() { }
+  empCollection:Employee[]=[]
+  constructor(private empService:EmployeeService, private router:Router) { }
 
   ngOnInit(): void {
+    this.getAllEmps();
   }
+  getAllEmps(){
+    
+    this.empService.getAllEmployee().subscribe(d=>{
+      console.log(d);
+      this.empCollection=d;
+    })
+  }
+  editEmployee(id:any){
+    this.router.navigate(['employee/edit/'+id]);
+  }
+
+
 
 }
